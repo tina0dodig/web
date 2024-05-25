@@ -1,0 +1,224 @@
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.googleapis.com/css?family=Forum");
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Forum", sans-serif;
+}
+
+section{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    scroll-snap-align: start
+  ;
+    overflow:hidden;
+}
+h1{
+  color: #5E3023;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-weight: bold;
+  animation: bombastic 1s;
+  text-transform: uppercase;
+}
+@keyframes bombastic {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+.container{
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  height: 100vh;
+  width: full;
+}
+
+
+
+
+
+ul{
+  list-style: none;
+  background:#BEC6BB;
+}
+ul li{
+  display: inline-block;
+  position: relative;
+}
+ul li a{
+  display: block;
+  padding: 15px 20px;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  font-size: 20px;
+}
+ul li ul.dropdown li{
+  display: block;
+}
+ul li ul.dropdown{
+  width: 350%;
+  background:#BEC6BB;
+  position: absolute;
+  z-index: 999;
+  display: none;  
+}
+ul li a:hover {
+  background: #7A8474;
+
+}
+ul li:hover ul.dropdown{
+  display: block;	
+}
+
+
+
+.slikass{
+
+  box-shadow: 100px 10px 100px  gray;
+   transition: transform 0.3s ease-in-out;
+  transition: filter 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+   border-radius: 20px;
+  object-fit: cover;
+}
+
+.slikass:hover {
+  transform: scale(1.1);
+   filter: brightness(70%) grayscale(30%);
+}
+
+h2{
+  color: #503B2C;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-weight: bold;
+  animation: bombastic 3s;
+  text-transform: uppercase;
+  text-align: center;
+
+}
+.pp{
+  color:#fff;
+  text-align: center;
+  font-size: 30px;
+}
+.slikaa{
+  height: 86%;
+  width: 86%;
+  border-radius: 20px;
+  object-fit: cover; 
+  object-position: center;
+  transition: filter 0.3s ease-in-out , transform 0.3s ease-in-out;
+}
+.slikaa:hover {
+  transform: scale(1.1);
+   filter: brightness(70%) grayscale(30%);
+}
+p{
+  font-size: 25px;
+
+}
+.accordion{
+  margin: 60px auto;
+  width: 800px;
+   background-color: transparent;
+}
+
+.accordion li{
+  list-style: none;
+  width: 100%;
+  margin: 20px;
+  padding: 10px;
+  border-radius:8px;
+  background:#BEC6BB;
+
+
+}
+.accordion li label{
+  display: flex;
+  align-items: center;
+  padding:10px;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+}
+label::before{
+  content: "+";
+  margin-right: 10px;
+  font-size: 24px;
+  font-weight: 600;
+}
+input[type="radio"]{
+  display:none;
+}
+.accordion .content{
+  color: #000;
+  padding: 0 10px;
+  line-height: 26px;
+  max-height: 0;
+  overflow: hidden;
+  transform: max-height 0.5s, padding 0.5s;  
+}
+.accordion input[type="radio"]:checked + label + .content{
+  max-height: 400px;
+  padding: 10px 10px 20px;
+}
+.accordion input[type="radio"]:checked + label::before{
+  content:"-";
+}
+
+
+
+
+
+/*pocetak stranice o nama*/
+
+
+.prva{
+background-image: url("slike/pozadine/poz1.jpg");
+background-size: cover;
+}
+
+
+.bl{
+  text-align:center;
+  padding:10px;
+  margin:20px;
+  font-size:25px;
+  Text-transform:none;
+}
+
+.druga{
+   background-color:#EBEFE3;
+  
+}
+
+.GG{
+  background-image: url("slike/pozadine/poz1.jpg");
+  background-size: cover;
+}
+
+@media screen and (max-width:800px){
+  .druga{
+    height:160vh;
+  }
+  .accordion{
+    margin: 30px auto;
+    width: 300px;
+     background-color: transparent;
+  }
+  .accordion input[type="radio"]:checked + label + .content{
+    max-height: 700px;
+    padding: 10px 10px 20px;}
+}
+
